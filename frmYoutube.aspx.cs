@@ -20,14 +20,10 @@ namespace YoutubeAPI
             SQLDBHelper busquedasDAL = new SQLDBHelper();
             busquedasDAL.GuardarBusqueda(query); // Asegúrate de que el método recibe 'query' y lo inserta como 'informacion'
 
-            // 6b43d48803df3bc503f96e4812b56a09cee8f9f7
             BDYoutube_DAL youtubeDAL = new BDYoutube_DAL();
             List<BDYoutube_BLL> videos = await youtubeDAL.BuscarVideos(query);
             rptVideos.DataSource = videos;
             rptVideos.DataBind();
         }
-        //HEAD
-
-        //6b43d48803df3bc503f96e4812b56a09cee8f9f7
     }
 }

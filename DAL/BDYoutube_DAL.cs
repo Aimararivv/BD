@@ -10,13 +10,13 @@ namespace DAL
 {
     public class BDYoutube_DAL
     {
-        private readonly string apiKey = "AIzaSyBHtTQc8vZTNZZI2NUB28cTawjH9EfQioo"; // Reemplaza con tu clave de API
+        private readonly string apiKey = "AIzaSyBHtTQc8vZTNZZI2NUB28cTawjH9EfQioo"; 
 
         public async Task<List<BDYoutube_BLL>> BuscarVideos(string Informacion)
         {
             using (var client = new HttpClient())
             {
-                string url = $"https://www.googleapis.com/youtube/v3/search?part=snippet&q={Informacion}&key={apiKey}&type=video"; // Usa apiKey aquí
+                string url = $"https://www.googleapis.com/youtube/v3/search?part=snippet&q={Informacion}&key={apiKey}&type=video"; 
                 var response = await client.GetStringAsync(url);
                 var json = JObject.Parse(response);
                 var videos = new List<BDYoutube_BLL>();
